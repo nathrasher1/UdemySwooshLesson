@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkillsActivity">
+    tools:context="Controller.SkillsActivity">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ToggleButton
-            android:id="@+id/toggleButton5"
+            android:id="@+id/beginnerBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -64,13 +64,14 @@
             android:background="@drawable/swoosh_toggle"
             android:checked="false"
             android:fontFamily="@font/montserrat"
+            android:onClick="onBeginnerBtnClicked"
             android:text="@string/beginner"
             android:textColor="@color/white"
             android:textOff="@string/beginner"
             android:textOn="@string/beginner" />
 
         <ToggleButton
-            android:id="@+id/toggleButton4"
+            android:id="@+id/ballerBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -78,6 +79,7 @@
             android:background="@drawable/swoosh_toggle"
             android:checked="false"
             android:fontFamily="@font/montserrat"
+            android:onClick="onBallerBtnClicked"
             android:text="@string/baller"
             android:textColor="@color/white"
             android:textOff="@string/baller"
@@ -85,7 +87,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/finishBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -93,6 +95,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="onFinishClicked"
         android:text="@string/finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
