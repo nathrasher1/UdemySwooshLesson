@@ -15,9 +15,20 @@ class LeagueActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
     }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null){
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)!!
+        }
+    }
 
     fun leagueNextClicked(view: View){
-        if(mensLeagueBtn.isChecked || womensLeagueBtn.isChecked || coedLeagueBtn.isChecked){
+        if(mensLeagueBtn.isChecked || womensLeagueBtn.isChecked || coedLeagueBtn.isChecked && player.league != null){
             val skillActivity = Intent(this, SkillsActivity::class.java)
             skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
